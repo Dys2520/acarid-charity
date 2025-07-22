@@ -18,10 +18,7 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="w-12 h-12 bg-blue-600 rounded-full mr-3 flex items-center justify-center">
-            <span className="text-white font-bold text-xl">A</span>
-          </div>
-          <h1 className="text-xl font-bold text-blue-600">A.Ca.Ri.D</h1>
+          <img src="/logo.png" alt="A.Ca.Ri.D Logo" className="w-20 h-12 mr-3 object-cover" />
         </div>
         
         <nav className="hidden md:block">

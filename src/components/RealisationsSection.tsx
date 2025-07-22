@@ -46,6 +46,42 @@ const realisations: Realisation[] = [
     description: "Sortie touristique au Gite de Noel avec les enfants bénéficiaires.",
     period: "2024",
     image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Distribution de fournitures scolaires",
+    description: "Première édition de l'activité de distribution de fournitures scolaires et paiement des frais de scolarité aux enfants bénéficiaires.",
+    period: "2022 – 2023",
+    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Distribution de vivres et vêtements",
+    description: "Première édition de l'activité de distributions de vivres et de vêtements au sein des orphelinats Les Saints Innocents et La Paix de Natitingou.",
+    period: "2022 – 2023",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Sortie touristique",
+    description: "Première édition de la sortie touristique avec les enfants bénéficiaires de l'association.",
+    period: "Avril 2023",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Distribution de vivres",
+    description: "Deuxième édition du projet de distribution de vivres aux personnes vulnérables.",
+    period: "2024",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Distribution scolaire",
+    description: "Troisième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
+    period: "2024",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+  },
+  {
+    title: "Sortie touristique Gite Noel",
+    description: "Sortie touristique au Gite de Noel avec les enfants bénéficiaires.",
+    period: "2024",
+    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
   }
 ];
 
@@ -53,6 +89,8 @@ export default function RealisationsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const MAX_VISIBLE_DOTS = 5; // Maximum number of dots to show
   
   // Responsive items per view
   useEffect(() => {
@@ -84,6 +122,31 @@ export default function RealisationsSection() {
     setCurrentIndex(index);
   };
   
+  // Calculate which dots to show
+  const getVisibleDots = () => {
+    const totalDots = maxIndex + 1;
+    if (totalDots <= MAX_VISIBLE_DOTS) {
+      return Array.from({ length: totalDots }, (_, index) => index);
+    }
+
+    const half = Math.floor(MAX_VISIBLE_DOTS / 2);
+    let start = Math.max(0, currentIndex - half);
+    let end = Math.min(totalDots - 1, start + MAX_VISIBLE_DOTS - 1);
+
+    // Adjust start if we're near the end
+    if (end - start < MAX_VISIBLE_DOTS - 1) {
+      start = Math.max(0, end - MAX_VISIBLE_DOTS + 1);
+    }
+
+    const visibleIndices = [];
+    for (let i = start; i <= end; i++) {
+      visibleIndices.push(i);
+    }
+    return visibleIndices;
+  };
+
+  const visibleDots = getVisibleDots();
+
   // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -193,7 +256,7 @@ export default function RealisationsSection() {
             
             {/* Enhanced Indicators */}
             <div className="flex justify-center mt-10 space-x-3">
-              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              {visibleDots.map((index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
