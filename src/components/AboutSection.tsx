@@ -2,9 +2,27 @@
 
 export default function AboutSection() {
   return (
-    <section id="apropos" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">À propos de nous</h2>
+    <section 
+      id="apropos" 
+      className="py-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Background blur overlay */}
+      <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">À propos de nous</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
+            Découvrez notre mission, nos valeurs et notre engagement pour un monde meilleur
+          </p>
+        </div>
         
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
@@ -67,25 +85,48 @@ export default function AboutSection() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-blue-600">Nos objectifs</h3>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <i className="fas fa-check text-green-500 mt-1 mr-3"></i>
-                <span>Améliorer la qualité de vie des enfants démunis et vulnérables</span>
-              </li>
-              <li className="flex items-start">
-                <i className="fas fa-check text-green-500 mt-1 mr-3"></i>
-                <span>Scolariser les enfants démunis et soutenir leurs parents dans leur autonomisation</span>
-              </li>
-              <li className="flex items-start">
-                <i className="fas fa-check text-green-500 mt-1 mr-3"></i>
-                <span>Construire des jardins d&apos;enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</span>
-              </li>
-              <li className="flex items-start">
-                <i className="fas fa-check text-green-500 mt-1 mr-3"></i>
-                <span>Contribuer à améliorer l&apos;accès à l&apos;eau potable pour les populations vivantes dans les zones arides</span>
-              </li>
-            </ul>
+            <h3 className="text-2xl font-semibold mb-8 text-blue-600">Nos objectifs</h3>
+            <div className="space-y-6">
+              <div className="flex items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-child text-white text-lg"></i>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-1">Qualité de vie des enfants</h4>
+                  <p className="text-gray-600">Améliorer la qualité de vie des enfants démunis et vulnérables</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-graduation-cap text-white text-lg"></i>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-1">Éducation et autonomisation</h4>
+                  <p className="text-gray-600">Scolariser les enfants démunis et soutenir leurs parents dans leur autonomisation</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-seedling text-white text-lg"></i>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-1">Jardins d'enfants écologiques</h4>
+                  <p className="text-gray-600">Construire des jardins d'enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <i className="fas fa-tint text-white text-lg"></i>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-1">Accès à l'eau potable</h4>
+                  <p className="text-gray-600">Contribuer à améliorer l'accès à l'eau potable pour les populations vivantes dans les zones arides</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
