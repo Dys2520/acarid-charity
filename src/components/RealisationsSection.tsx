@@ -52,6 +52,7 @@ const realisations: Realisation[] = [
 export default function RealisationsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   
   // Responsive items per view
   useEffect(() => {
@@ -82,6 +83,23 @@ export default function RealisationsSection() {
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
+  
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        return nextIndex > maxIndex ? 0 : nextIndex;
+      });
+    }, 4000); // Change slide every 4 seconds
+    
+    return () => clearInterval(interval);
+  }, [maxIndex, isAutoPlaying]);
+  
+  const handleMouseEnter = () => setIsAutoPlaying(false);
+  const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
     <section 
@@ -109,7 +127,11 @@ export default function RealisationsSection() {
         </div>
         
         <div className="max-w-7xl mx-auto">
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="overflow-hidden rounded-2xl">
               <div 
                 className="flex transition-all duration-700 ease-out"

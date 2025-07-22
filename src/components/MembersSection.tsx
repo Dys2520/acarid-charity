@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 interface Member {
@@ -67,6 +67,7 @@ interface VerticalCarouselProps {
 
 function VerticalCarousel({ members, title }: VerticalCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const itemsPerView = 2;
   const maxIndex = Math.max(0, members.length - itemsPerView);
 
@@ -79,6 +80,23 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
 
   const nextSlide = () => moveCarousel(1);
   const prevSlide = () => moveCarousel(-1);
+  
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        return nextIndex > maxIndex ? 0 : nextIndex;
+      });
+    }, 3500); // Change slide every 3.5 seconds
+    
+    return () => clearInterval(interval);
+  }, [maxIndex, isAutoPlaying]);
+  
+  const handleMouseEnter = () => setIsAutoPlaying(false);
+  const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
     <div className="relative">
@@ -89,7 +107,11 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
       </h3>
       
-      <div className="relative overflow-hidden h-[520px] bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6">
+      <div 
+        className="relative overflow-hidden h-[520px] bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div 
           className="flex flex-col space-y-4 transition-transform duration-700 ease-out"
           style={{
@@ -115,7 +137,7 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
           ))}
         </div>
         
-        {/* Navigation buttons */}
+        {/* Navigation buttons
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
           <button 
             onClick={prevSlide}
@@ -129,10 +151,10 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
           >
             <i className="fas fa-chevron-down text-lg group-hover:text-blue-200 transition-colors"></i>
           </button>
-        </div>
+        </div>*/}
         
-        {/* Indicators */}
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2">
+        {/* Indicators
+        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
@@ -144,7 +166,7 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

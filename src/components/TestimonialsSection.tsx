@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 interface Testimonial {
   _id: string;
   name: string;
-  role: string;
   content: string;
   createdAt: string;
 }
@@ -15,35 +14,30 @@ const defaultTestimonials = [
   {
     _id: '1',
     name: 'Marie A.',
-    role: 'Parent bénéficiaire',
     content: 'Grâce à l\'association A.Ca.Ri.D, mon fils a pu reprendre ses études. Nous sommes très reconnaissants pour l\'aide apportée.',
     createdAt: '2023-01-01'
   },
   {
     _id: '2',
     name: 'Jean P.',
-    role: 'Bénévole',
     content: 'Travailler comme bénévole pour A.Ca.Ri.D est une expérience enrichissante. Chaque sourire d\'enfant est une récompense.',
     createdAt: '2023-01-02'
   },
   {
     _id: '3',
     name: 'Aminatou D.',
-    role: 'Bénéficiaire',
     content: 'Les distributions de vivres ont été un vrai soulagement pour notre famille pendant les moments difficiles.',
     createdAt: '2023-01-03'
   },
   {
     _id: '4',
     name: 'Paul T.',
-    role: 'Frère d\'un bénéficiaire',
     content: 'L\'association a transformé la vie de mon petit frère en lui offrant une éducation de qualité. Merci du fond du cœur.',
     createdAt: '2023-01-04'
   },
   {
     _id: '5',
     name: 'Fatima S.',
-    role: 'Éducatrice',
     content: 'Les sorties touristiques organisées par A.Ca.Ri.D permettent aux enfants de découvrir leur pays et de créer des souvenirs magnifiques.',
     createdAt: '2023-01-05'
   }
@@ -119,8 +113,7 @@ export default function TestimonialsSection() {
                           &quot;{testimonial.content}&quot;
                         </p>
                         <div className="border-t pt-4">
-                          <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
-                          <p className="text-blue-600 text-sm">{testimonial.role}</p>
+                          <p className="font-semibold text-gray-800">{testimonial.name}</p>
                         </div>
                       </div>
                     </div>

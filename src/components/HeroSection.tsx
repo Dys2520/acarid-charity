@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section 
       id="accueil"
-      className="text-white py-24 md:py-40 relative overflow-hidden min-h-screen flex items-center"
+      className="text-white py-16 md:py-24 relative overflow-hidden h-screen flex items-center"
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
         backgroundSize: 'cover',
@@ -37,7 +37,7 @@ export default function HeroSection() {
             </div>
           </div>
           
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-fade-in leading-tight">
             <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               Association Caritative
             </span>
@@ -45,11 +45,11 @@ export default function HeroSection() {
             <span className="text-blue-200">Rive Droite</span>
           </h1>
           
-          <p className="text-xl md:text-3xl mb-12 max-w-4xl mx-auto animate-fade-in-delay text-gray-200 leading-relaxed">
+          <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-fade-in-delay text-gray-200 leading-relaxed">
             Redonnons le sourire aux plus démunis à travers des actions concrètes et durables.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in-delay-2 mb-12">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-delay-2 mb-8">
             <a 
               href="#don" 
               onClick={(e) => handleSmoothScroll(e, 'don')}
@@ -75,12 +75,22 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+      {/* Clickable Scroll indicator */}
+      <button 
+        onClick={(e) => {
+          e.preventDefault();
+          const nextSection = document.getElementById('realisations');
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:scale-110 transition-transform duration-300 cursor-pointer group"
+      >
+        <div className="w-8 h-12 border-2 border-white/40 group-hover:border-white/60 rounded-full flex justify-center transition-colors duration-300">
+          <div className="w-2 h-4 bg-white/60 group-hover:bg-white/80 rounded-full mt-2 animate-pulse transition-colors duration-300"></div>
         </div>
-      </div>
+        <p className="text-white/60 text-xs mt-2 group-hover:text-white/80 transition-colors duration-300">Défiler vers le bas</p>
+      </button>
     </section>
   );
 }

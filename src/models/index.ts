@@ -137,11 +137,6 @@ const testimonialSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  role: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   content: {
     type: String,
     required: true,

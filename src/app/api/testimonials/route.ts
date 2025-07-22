@@ -7,10 +7,10 @@ export async function POST(request: NextRequest) {
     await dbConnect();
 
     const body = await request.json();
-    const { name, role, content } = body;
+    const { name, content } = body;
 
     // Validate required fields
-    if (!name || !role || !content) {
+    if (!name || !content) {
       return NextResponse.json(
         { error: 'Tous les champs sont requis.' },
         { status: 400 }
@@ -20,7 +20,6 @@ export async function POST(request: NextRequest) {
     // Create new testimonial (requires approval)
     const newTestimonial = new Testimonial({
       name,
-      role,
       content,
       isApproved: false, // Requires manual approval
     });

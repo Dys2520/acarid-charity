@@ -24,62 +24,64 @@ export default function AboutSection() {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-blue-600">Qui sommes-nous ?</h3>
-            <p className="text-gray-700 mb-6">
-              Fondée à Natitingou dans la région de l&apos;Atacora, l&apos;Association Caritative Rive Droite (A.Ca.Ri.D) est née de la volonté commune d&apos;un groupe de citoyens engagés, désireux d&apos;apporter une aide concrète et durable aux populations les plus vulnérables.
-            </p>
-            <p className="text-gray-700">
-              Depuis sa création, l&apos;association agit avec détermination pour soulager la détresse humaine, notamment celle des enfants et des familles en situation de précarité. Elle tire son nom symbolique de la « Rive Droite », vision d&apos;un monde plus juste, où chacun a la possibilité de traverser les épreuves de la vie et d&apos;accéder à un avenir meilleur.
-            </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold mb-6 text-white">Qui sommes-nous ?</h3>
+              <p className="text-blue-100 mb-6 leading-relaxed">
+                Fondée à Natitingou dans la région de l&apos;Atacora, l&apos;Association Caritative Rive Droite (A.Ca.Ri.D) est née de la volonté commune d&apos;un groupe de citoyens engagés, désireux d&apos;apporter une aide concrète et durable aux populations les plus vulnérables.
+              </p>
+              <p className="text-blue-100 leading-relaxed">
+                Depuis sa création, l&apos;association agit avec détermination pour soulager la détresse humaine, notamment celle des enfants et des familles en situation de précarité.
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold mb-6 text-white">Notre mission</h3>
+              <p className="text-blue-100 leading-relaxed">
+                Notre mission est claire : Redonner le sourire aux plus démunis, en leur offrant des soutiens ciblés pour améliorer leurs conditions de vie et renforcer leur autonomie. À travers des actions concrètes, nous semons chaque jour des graines d&apos;espoir dans les communautés.
+              </p>
+            </div>
           </div>
           
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-blue-600">Notre mission</h3>
-            <p className="text-gray-700">
-              Notre mission est claire : Redonner le sourire aux plus démunis, en leur offrant des soutiens ciblés pour améliorer leurs conditions de vie et renforcer leur autonomie. À travers des actions concrètes (scolarisation, création de jardins d&apos;enfants, appui à l&apos;autonomisation, accès à l&apos;eau potable), nous semons chaque jour des graines d&apos;espoir dans les communautés.
-            </p>
-          </div>
-          
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-blue-600">Nos valeurs</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-100 p-2 rounded-full mr-4">
-                    <i className="fas fa-hands-helping text-blue-600"></i>
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-12 text-center text-white">Nos valeurs</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-hands-helping text-white text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-lg">Solidarité</h4>
+                  <h4 className="font-bold text-lg text-white mb-3">Solidarité</h4>
+                  <p className="text-blue-200 text-sm">Nous croyons en la force de l&apos;entraide et du soutien collectif.</p>
                 </div>
-                <p className="text-gray-700">Nous croyons en la force de l&apos;entraide et du soutien collectif.</p>
               </div>
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-100 p-2 rounded-full mr-4">
-                    <i className="fas fa-heart text-blue-600"></i>
+              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-heart text-white text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-lg">Humanité</h4>
+                  <h4 className="font-bold text-lg text-white mb-3">Humanité</h4>
+                  <p className="text-blue-200 text-sm">Chaque personne mérite d&apos;être traitée avec dignité et compassion.</p>
                 </div>
-                <p className="text-gray-700">Chaque personne mérite d&apos;être traitée avec dignité et compassion.</p>
               </div>
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-100 p-2 rounded-full mr-4">
-                    <i className="fas fa-bullseye text-blue-600"></i>
+              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-bullseye text-white text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-lg">Engagement</h4>
+                  <h4 className="font-bold text-lg text-white mb-3">Engagement</h4>
+                  <p className="text-blue-200 text-sm">Nous œuvrons avec rigueur et constance pour un impact durable.</p>
                 </div>
-                <p className="text-gray-700">Nous œuvrons avec rigueur et constance pour un impact durable.</p>
               </div>
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-100 p-2 rounded-full mr-4">
-                    <i className="fas fa-chart-line text-blue-600"></i>
+              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-chart-line text-white text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-lg">Autonomisation</h4>
+                  <h4 className="font-bold text-lg text-white mb-3">Autonomisation</h4>
+                  <p className="text-blue-200 text-sm">Nous favorisons les initiatives qui permettent aux bénéficiaires de devenir acteurs de leur propre avenir.</p>
                 </div>
-                <p className="text-gray-700">Nous favorisons les initiatives qui permettent aux bénéficiaires de devenir acteurs de leur propre avenir.</p>
               </div>
             </div>
           </div>
@@ -92,8 +94,8 @@ export default function AboutSection() {
                   <i className="fas fa-child text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">Qualité de vie des enfants</h4>
-                  <p className="text-gray-600">Améliorer la qualité de vie des enfants démunis et vulnérables</p>
+                  <h4 className="font-bold text-white mb-1">Qualité de vie des enfants</h4>
+                  <p className="text-white">Améliorer la qualité de vie des enfants démunis et vulnérables</p>
                 </div>
               </div>
               
@@ -102,8 +104,8 @@ export default function AboutSection() {
                   <i className="fas fa-graduation-cap text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">Éducation et autonomisation</h4>
-                  <p className="text-gray-600">Scolariser les enfants démunis et soutenir leurs parents dans leur autonomisation</p>
+                  <h4 className="font-bold text-white mb-1">Éducation et autonomisation</h4>
+                  <p className="text-white">Scolariser les enfants démunis et soutenir leurs parents dans leur autonomisation</p>
                 </div>
               </div>
               
@@ -112,8 +114,8 @@ export default function AboutSection() {
                   <i className="fas fa-seedling text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">Jardins d'enfants écologiques</h4>
-                  <p className="text-gray-600">Construire des jardins d'enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</p>
+                  <h4 className="font-bold text-white mb-1">Jardins d'enfants écologiques</h4>
+                  <p className="text-white">Construire des jardins d'enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</p>
                 </div>
               </div>
               
@@ -122,8 +124,8 @@ export default function AboutSection() {
                   <i className="fas fa-tint text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-800 mb-1">Accès à l'eau potable</h4>
-                  <p className="text-gray-600">Contribuer à améliorer l'accès à l'eau potable pour les populations vivantes dans les zones arides</p>
+                  <h4 className="font-bold text-white mb-1">Accès à l'eau potable</h4>
+                  <p className="text-white">Contribuer à améliorer l'accès à l'eau potable pour les populations vivantes dans les zones arides</p>
                 </div>
               </div>
             </div>
