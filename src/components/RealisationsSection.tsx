@@ -15,73 +15,61 @@ const realisations: Realisation[] = [
     title: "Distribution de fournitures scolaires",
     description: "Première édition de l'activité de distribution de fournitures scolaires et paiement des frais de scolarité aux enfants bénéficiaires.",
     period: "2022 – 2023",
-    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    image: "/action1.jpg"
   },
   {
     title: "Distribution de vivres et vêtements",
     description: "Première édition de l'activité de distributions de vivres et de vêtements au sein des orphelinats Les Saints Innocents et La Paix de Natitingou.",
     period: "2022 – 2023",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    image: "/action2.jpg"
   },
   {
     title: "Sortie touristique",
     description: "Première édition de la sortie touristique avec les enfants bénéficiaires de l'association.",
     period: "Avril 2023",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    image: "/action3.jpg"
   },
   {
     title: "Distribution de vivres",
-    description: "Deuxième édition du projet de distribution de vivres aux personnes vulnérables.",
+    description: "Don de compléments alimentaires aux enfants de l'orphelinat.",
     period: "2024",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    image: "/action4.jpg"
+  },
+  {
+    title: "Distribution scolaire",
+    description: "Deuxième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
+    period: "2024",
+    image: "/action5.jpg"
+  },
+  {
+    title: "Noel des enfants",
+    description: "Première édition de l'activité La Noel  des enfants.",
+    period: "2024",
+    image: "/action6.jpg"
+  },
+  {
+    title: "Distribution de vivres",
+    description: "Deuxième édition de l'activité de distributions de vivres aux personnes vulnérables.",
+    period: "2024 - 2025",
+    image: "/action7.jpg"
   },
   {
     title: "Distribution scolaire",
     description: "Troisième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
-    period: "2024",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    period: "2024-2025",
+    image: "/action8.jpg"
   },
   {
-    title: "Sortie touristique Gite Noel",
-    description: "Sortie touristique au Gite de Noel avec les enfants bénéficiaires.",
-    period: "2024",
-    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-  },
-  {
-    title: "Distribution de fournitures scolaires",
-    description: "Première édition de l'activité de distribution de fournitures scolaires et paiement des frais de scolarité aux enfants bénéficiaires.",
-    period: "2022 – 2023",
-    image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-  },
-  {
-    title: "Distribution de vivres et vêtements",
-    description: "Première édition de l'activité de distributions de vivres et de vêtements au sein des orphelinats Les Saints Innocents et La Paix de Natitingou.",
-    period: "2022 – 2023",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    title: "Distribution de vivres",
+    description: "Troisième édition de l'activité de distributions de vivres et compléments alimentaires au sein des orphelinats Les Saints Innocents et Taabaku.",
+    period: "2024 - 2025",
+    image: "/action9.jpg"
   },
   {
     title: "Sortie touristique",
-    description: "Première édition de la sortie touristique avec les enfants bénéficiaires de l'association.",
-    period: "Avril 2023",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-  },
-  {
-    title: "Distribution de vivres",
-    description: "Deuxième édition du projet de distribution de vivres aux personnes vulnérables.",
-    period: "2024",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-  },
-  {
-    title: "Distribution scolaire",
-    description: "Troisième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
-    period: "2024",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
-  },
-  {
-    title: "Sortie touristique Gite Noel",
-    description: "Sortie touristique au Gite de Noel avec les enfants bénéficiaires.",
-    period: "2024",
-    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80"
+    description: "Première édition de la sortie touristique au Gite de Noel avec les enfants bénéficiaires de l'association.",
+    period: "2024 - 2025",
+    image: "/action10.jpg"
   }
 ];
 

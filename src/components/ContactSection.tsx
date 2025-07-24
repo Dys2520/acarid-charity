@@ -30,7 +30,9 @@ export default function ContactSection() {
       });
 
       if (response.ok) {
-        setStatusMessage('Message envoyé avec succès!');
+        const responseData = await response.json();
+        // Utiliser le message spécifique renvoyé par l'API
+        setStatusMessage(responseData.message || 'Message envoyé avec succès!');
         setFormState({ name: '', email: '', subject: '', customSubject: '', message: '' });
       } else {
         const errorData = await response.json();

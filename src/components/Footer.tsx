@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Association Caritative Rive Droite (A.Ca.Ri.D). Tous droits réservés.</p>
+          <p>&copy; 2025 Association Caritative Rive Droite (A.Ca.Ri.D). Tous droits réservés.</p>
         </div>
       </div>
     </footer>

@@ -13,6 +13,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mongoose": "^5.11.96",
     "@types/nodemailer": "^6.4.17",
+    "axios": "^1.11.0",
     "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.0",
     "fedapay": "^1.2.4",

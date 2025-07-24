@@ -1,75 +1,100 @@
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Donation } from '@/models';
+import crypto from 'crypto';
 
-// Import FedaPay conditionally
-let FedaPay: any = null;
-try {
-  FedaPay = require('fedapay');
-  // Initialize FedaPay only if properly loaded and configured
-  if (process.env.FEDAPAY_SECRET_KEY && FedaPay && typeof FedaPay.setApiKey === 'function') {
-    FedaPay.setApiKey(process.env.FEDAPAY_SECRET_KEY);
-    FedaPay.setEnvironment(process.env.FEDAPAY_ENVIRONMENT || 'sandbox');
-  }
-} catch (error) {
-  console.warn('FedaPay could not be loaded:', error);
-  FedaPay = null;
-}
+// CinetPay webhook verification (using direct approach)
 
 export async function POST(request: NextRequest) {
   try {
     await dbConnect();
 
     const body = await request.json();
-    const { entity } = body;
+    console.log('CinetPay Webhook received:', body);
 
-    // Verify webhook signature if available
-    // const signature = request.headers.get('x-fedapay-signature');
-    // Add signature verification logic here if needed
+    // CinetPay webhook structure
+    const { cpm_trans_id, cpm_trans_status, cpm_amount, cpm_currency, cpm_custom, cpm_site_id } = body;
 
-    if (entity && entity.entity === 'transaction') {
-      const transactionId = entity.id;
-      const status = entity.status;
+    // Verify the webhook is from CinetPay
+    if (cpm_site_id !== process.env.CINETPAY_SITE_ID) {
+      console.error('Invalid site ID in webhook');
+      return NextResponse.json(
+        { error: 'Invalid site ID' },
+        { status: 401 }
+      );
+    }
 
-      // Find the donation by FedaPay transaction ID
-      const donation = await Donation.findOne({ 
-        fedapayTransactionId: transactionId 
-      });
+    if (!cpm_trans_id) {
+      console.error('Missing transaction ID in webhook');
+      return NextResponse.json(
+        { error: 'Missing transaction ID' },
+        { status: 400 }
+      );
+    }
 
-      if (!donation) {
-        console.log(`Donation not found for transaction ID: ${transactionId}`);
+    console.log(`Processing CinetPay transaction ${cpm_trans_id} with status: ${cpm_trans_status}`);
+
+    // Find the donation by CinetPay transaction ID
+    const donation = await Donation.findOne({ 
+      cinetpayTransactionId: cpm_trans_id 
+    });
+
+    if (!donation) {
+      console.log(`Donation not found for transaction ID: ${cpm_trans_id}`);
+      return NextResponse.json({ status: 'ok' }, { status: 200 });
+    }
+
+    const previousStatus = donation.status;
+
+    // Update donation status based on CinetPay transaction status
+    switch (cpm_trans_status) {
+      case 'ACCEPTED':
+      case 'SUCCESS':
+        donation.status = 'completed';
+        donation.completedAt = new Date();
+        break;
+      case 'REFUSED':
+      case 'CANCELLED':
+        donation.status = 'cancelled';
+        break;
+      case 'FAILED':
+        donation.status = 'failed';
+        break;
+      case 'PENDING':
+        donation.status = 'pending';
+        break;
+      default:
+        console.log(`Unknown CinetPay status: ${cpm_trans_status}`);
+        // Don't change status for unknown statuses
         return NextResponse.json({ status: 'ok' }, { status: 200 });
-      }
+    }
 
-      // Update donation status based on FedaPay transaction status
-      switch (status) {
-        case 'approved':
-        case 'completed':
-          donation.status = 'completed';
-          donation.completedAt = new Date();
-          break;
-        case 'canceled':
-        case 'cancelled':
-          donation.status = 'cancelled';
-          break;
-        case 'failed':
-          donation.status = 'failed';
-          break;
-        default:
-          donation.status = 'pending';
-      }
-
+    // Save only if status changed
+    if (previousStatus !== donation.status) {
       await donation.save();
-
-      console.log(`Donation ${donation._id} updated to status: ${donation.status}`);
+      console.log(`Donation ${donation._id} updated from ${previousStatus} to ${donation.status}`);
+      
+      // Add additional actions like sending confirmation email
+      if (donation.status === 'completed') {
+        // Logic for completed donation (email, notification, etc.)
+        console.log(`✅ Donation completed: ${donation._id} - Amount: ${donation.amount} FCFA`);
+      }
     }
 
     return NextResponse.json({ status: 'ok' }, { status: 200 });
   } catch (error) {
-    console.error('Webhook error:', error);
+    console.error('CinetPay Webhook error:', error);
     return NextResponse.json(
       { error: 'Webhook processing failed' },
       { status: 500 }
     );
   }
+}
+
+// GET method to test webhook availability
+export async function GET() {
+  return NextResponse.json({
+    message: 'CinetPay Webhook endpoint is active',
+    timestamp: new Date().toISOString()
+  });
 }

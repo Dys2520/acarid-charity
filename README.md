@@ -5,11 +5,12 @@ A modern, dynamic website for the Association Caritative Rive Droite (A.Ca.Ri.D)
 ## Features
 
 - **Dynamic Content**: Built with Next.js and MongoDB for dynamic content management
-- **Payment Integration**: FedaPay integration for donations with support for:
-  - MTN Money
-  - Moov Money  
-  - Celtis Money
+- **Payment Integration**: CinetPay integration for donations with support for:
+  - MTN Money (Benin)
+  - Moov Money (Benin)
+  - Celtis Cash (Benin)
   - Visa cards
+  - Mastercard
 - **Working Carousels**: Smooth, interactive carousels for showcasing achievements and team members
 - **Contact Forms**: Dynamic message sending and volunteer registration
 - **Testimonials**: Dynamic testimonial system with approval workflow
@@ -22,7 +23,7 @@ A modern, dynamic website for the Association Caritative Rive Droite (A.Ca.Ri.D)
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS, Montserrat font
 - **Backend**: Next.js API Routes, MongoDB with Mongoose
-- **Payment**: FedaPay for West African payment methods
+- **Payment**: CinetPay for West African payment methods
 - **Icons**: Font Awesome 6
 - **Deployment Ready**: Vercel/Netlify compatible
 
@@ -32,7 +33,7 @@ A modern, dynamic website for the Association Caritative Rive Droite (A.Ca.Ri.D)
 
 - Node.js 18.0 or later
 - MongoDB database (local or MongoDB Atlas)
-- FedaPay account for payment processing
+- CinetPay account for payment processing
 
 ### Installation
 
@@ -59,10 +60,12 @@ MONGODB_URI=mongodb://localhost:27017/acarid-charity
 # Or for MongoDB Atlas:
 # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/acarid-charity?retryWrites=true&w=majority
 
-# FedaPay configuration
-FEDAPAY_SECRET_KEY=your-fedapay-secret-key
-FEDAPAY_ENVIRONMENT=sandbox
-# Use 'live' for production
+# CinetPay configuration
+CINETPAY_API_KEY=your-cinetpay-api-key
+CINETPAY_SITE_ID=your-cinetpay-site-id
+CINETPAY_SECRET_KEY=your-cinetpay-secret-key
+CINETPAY_ENVIRONMENT=SANDBOX
+# Use 'PROD' for production
 
 # Next.js configuration
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
@@ -86,20 +89,23 @@ npm run dev
 - `GET /api/volunteers` - Get all volunteer applications (admin)
 
 ### Donations
-- `POST /api/donations` - Create donation with FedaPay
+- `POST /api/donations` - Create donation with CinetPay
 - `GET /api/donations` - Get donation statistics
-- `POST /api/donations/webhook` - FedaPay webhook handler
+- `POST /api/donations/webhook` - CinetPay webhook handler
 
 ### Testimonials
 - `POST /api/testimonials` - Submit testimonials
 - `GET /api/testimonials` - Get approved testimonials
 
-## FedaPay Setup
+## CinetPay Setup
 
-1. Sign up at [FedaPay](https://fedapay.com)
-2. Get your API keys from the dashboard
+1. Sign up at [CinetPay](https://cinetpay.com)
+2. Get your API credentials from the dashboard:
+   - API Key
+   - Site ID  
+   - Secret Key
 3. Configure webhook URL: `https://yourdomain.com/api/donations/webhook`
-4. Set up your payment methods (MTN Money, Moov Money, etc.)
+4. Set up your payment methods (MTN Money, Moov Money, Celtis Cash, etc.)
 
 ## Database Schema
 
@@ -148,7 +154,7 @@ Association Caritative Rive Droite (A.Ca.Ri.D)
 
 ## Acknowledgments
 
-- FedaPay for payment processing
+- CinetPay for payment processing
 - Unsplash for placeholder images
 - Font Awesome for icons
 - MongoDB for database hosting

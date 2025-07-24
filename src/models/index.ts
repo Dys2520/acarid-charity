@@ -40,43 +40,6 @@ const volunteerSchema = new mongoose.Schema({
   },
 });
 
-// Message Schema
-const messageSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    lowercase: true,
-    trim: true,
-  },
-  subject: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  customSubject: {
-    type: String,
-    trim: true,
-  },
-  message: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  status: {
-    type: String,
-    enum: ['unread', 'read', 'replied'],
-    default: 'unread',
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
 
 // Donation Schema
 const donationSchema = new mongoose.Schema({
@@ -111,7 +74,7 @@ const donationSchema = new mongoose.Schema({
     unique: true,
     sparse: true,
   },
-  fedapayTransactionId: {
+  cinetpayTransactionId: {
     type: String,
     unique: true,
     sparse: true,
@@ -154,6 +117,5 @@ const testimonialSchema = new mongoose.Schema({
 
 // Export models
 export const Volunteer = mongoose.models.Volunteer || mongoose.model('Volunteer', volunteerSchema);
-export const Message = mongoose.models.Message || mongoose.model('Message', messageSchema);
 export const Donation = mongoose.models.Donation || mongoose.model('Donation', donationSchema);
 export const Testimonial = mongoose.models.Testimonial || mongoose.model('Testimonial', testimonialSchema);
