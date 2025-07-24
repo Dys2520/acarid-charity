@@ -38,11 +38,6 @@ export default function DonationSection() {
                     <h4 className="font-bold text-gray-800">MTN Mobile Money</h4>
                   </div>
                   <p className="text-lg font-mono text-gray-700 bg-yellow-50 px-3 py-2 rounded">+229 97 27 73 72</p>
-                  <div className="flex items-center mb-2">
-                    <img src="/mtn-logo.png" alt="MTN Mobile Money" className="w-12 h-8 mr-3 object-contain" />
-                    <h4 className="font-bold text-gray-800">MTN Mobile Money</h4>
-                  </div>
-                  <p className="text-lg font-mono text-gray-700 bg-yellow-50 px-3 py-2 rounded">+229 66 77 88 99</p>
                 </div>
                 
                 <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
@@ -59,15 +54,6 @@ export default function DonationSection() {
                     <h4 className="font-bold text-gray-800">MTN Mobile Money</h4>
                   </div>
                   <p className="text-lg font-mono text-gray-700 bg-yellow-50 px-3 py-2 rounded">+229 56 97 50 15</p>
-                  <p className="text-lg font-mono text-gray-700 bg-orange-50 px-3 py-2 rounded">+229 66 77 88 98</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border-l-4 border-blue-500 shadow-sm">
-                  <div className="flex items-center mb-2">
-                    <img src="/celtis-logo.png" alt="Celtis Cash" className="w-12 h-8 mr-3 object-contain" />
-                    <h4 className="font-bold text-gray-800">Celtis Cash</h4>
-                  </div>
-                  <p className="text-lg font-mono text-gray-700 bg-blue-50 px-3 py-2 rounded">+229 66 77 88 97</p>
                 </div>
               </div>
               
