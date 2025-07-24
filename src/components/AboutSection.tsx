@@ -13,11 +13,8 @@ export default function AboutSection() {
       }}
     >
       {/* Background blur overlay */}
-<<<<<<< HEAD
       <div className="absolute inset-0 bg-blue-500/60 backdrop-blur-sm"></div>
-=======
       <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
->>>>>>> e96ae6f52a09b6817c376c2c9b0f9b3e09ac5a4f
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
@@ -118,8 +115,8 @@ export default function AboutSection() {
                   <i className="fas fa-seedling text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-bold text-white mb-1">Jardins d'enfants écologiques</h4>
-                  <p className="text-white">Construire des jardins d'enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</p>
+                  <h4 className="font-bold text-white mb-1">Jardins d&apos;enfants écologiques</h4>
+                  <p className="text-white">Construire des jardins d&apos;enfants sains, écologiques et conviviaux pour les enfants des zones les plus vulnérables</p>
                 </div>
               </div>
               
@@ -128,8 +125,8 @@ export default function AboutSection() {
                   <i className="fas fa-tint text-white text-lg"></i>
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-bold text-white mb-1">Accès à l'eau potable</h4>
-                  <p className="text-white">Contribuer à améliorer l'accès à l'eau potable pour les populations vivantes dans les zones arides</p>
+                  <h4 className="font-bold text-white mb-1">Accès à l&apos;eau potable</h4>
+                  <p className="text-white">Contribuer à améliorer l&apos;accès à l&apos;eau potable pour les populations vivantes dans les zones arides</p>
                 </div>
               </div>
             </div>
