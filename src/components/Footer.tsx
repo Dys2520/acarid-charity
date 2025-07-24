@@ -83,11 +83,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-3 text-blue-400"></i>
+<<<<<<< HEAD
                 <span>+229 94 15 25 33</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-3 text-blue-400"></i>
                 <span>assoscaritativerivedroite@gmail.com</span>
+=======
+                <span>+229 XX XX XX XX</span>
+              </li>
+              <li className="flex items-center">
+                <i className="fas fa-envelope mr-3 text-blue-400"></i>
+                <span>contact@acarid.org</span>
+>>>>>>> e96ae6f52a09b6817c376c2c9b0f9b3e09ac5a4f
               </li>
             </ul>
             <div className="flex space-x-4 mt-4">

@@ -13,7 +13,11 @@ export default function AboutSection() {
       }}
     >
       {/* Background blur overlay */}
+<<<<<<< HEAD
       <div className="absolute inset-0 bg-blue-500/60 backdrop-blur-sm"></div>
+=======
+      <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+>>>>>>> e96ae6f52a09b6817c376c2c9b0f9b3e09ac5a4f
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
