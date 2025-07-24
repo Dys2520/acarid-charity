@@ -88,11 +88,6 @@ export default function Footer() {
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-3 text-blue-400"></i>
                 <span>assoscaritativerivedroite@gmail.com</span>
-                <span>+229 97 27 73 72</span>
-              </li>
-              <li className="flex items-center">
-                <i className="fas fa-envelope mr-3 text-blue-400"></i>
-                <span>assoscaritativerivedroite@gmail.com</span>
               </li>
             </ul>
             <div className="flex space-x-4 mt-4">
