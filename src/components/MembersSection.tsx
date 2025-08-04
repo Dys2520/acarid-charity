@@ -13,22 +13,22 @@ const conseilAdministration: Member[] = [
   {
     name: "Mr DOSSOU Enagnon Lionel Gildas",
     position: "Président",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mme Angèle TAWARI",
     position: "Vice-présidente",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mr Fréjus DOUGOU",
     position: "Secrétaire Général",
-    image: "https://randomuser.me/api/portraits/men/75.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mme SANNY Naelys",
     position: "Trésorière générale",
-    image: "https://randomuser.me/api/portraits/women/68.jpg"
+    image: "/utilisateur.png"
   }
 ];
 
@@ -36,29 +36,30 @@ const comiteExecutif: Member[] = [
   {
     name: "Mr Fréjus DOUGOU",
     position: "Directeur exécutif",
-    image: "https://randomuser.me/api/portraits/men/75.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mme Geneviève KOUAGO",
     position: "Chargé de programmes",
-    image: "https://randomuser.me/api/portraits/women/33.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mme Larissa AHADJI",
     position: "Secrétaire-comptable",
-    image: "https://randomuser.me/api/portraits/women/28.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Mme Angèle TAWARI",
     position: "Chargée du suivi et de l'évaluation",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    image: "/utilisateur.png"
   },
   {
     name: "Rock AMEDOME BAUDE",
     position: "Chargé de communication",
-    image: "https://randomuser.me/api/portraits/men/12.jpg"
+    image: "/utilisateur.png"
   }
 ];
+
 
 interface VerticalCarouselProps {
   members: Member[];
@@ -77,9 +78,6 @@ function VerticalCarousel({ members, title }: VerticalCarouselProps) {
     if (newIndex > maxIndex) newIndex = 0;
     setCurrentIndex(newIndex);
   };
-
-  const nextSlide = () => moveCarousel(1);
-  const prevSlide = () => moveCarousel(-1);
   
   // Auto-play functionality
   useEffect(() => {
@@ -194,7 +192,7 @@ export default function MembersSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
           <p className="text-gray-200 text-lg max-w-4xl mx-auto leading-relaxed">
-            L'Association est représentée, dirigée et administrée par un Conseil d'Administration. Les membres de ce Conseil sont élus pour un mandat de cinq (05) ans, renouvelable. Le Conseil d'Administration en exercice désigne également un Comité Exécutif.
+            L&copy;Association est représentée, dirigée et administrée par un Conseil d&copy;Administration. Les membres de ce Conseil sont élus pour un mandat de cinq (05) ans, renouvelable. Le Conseil d&copy;Administration en exercice désigne également un Comité Exécutif.
           </p>
         </div>
         

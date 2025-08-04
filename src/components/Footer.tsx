@@ -50,8 +50,8 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div>
-            <h4 className="font-semibold mb-4">Nous soutenir</h4>
+          <div> 
+            <h4 className="font-semibold mb-4 pSr-0">Nous soutenir</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#don" onClick={(e) => handleSmoothScroll(e, 'don')} 
@@ -75,21 +75,28 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2">
-              <li className="flex items-center">
-                <i className="fas fa-map-marker-alt mr-3 text-blue-400"></i>
+            <h4 className="font-semibold mb-4 ml-6">Contact</h4>
+            <ul className="space-y-2 w-full max-w-md"> {/* Ajout d'une largeur max */}
+              <li className="flex items-start">
+                <i className="fas fa-map-marker-alt mr-3 text-blue-400 mt-1"></i>
                 <span>Natitingou, Atacora, Bénin</span>
               </li>
-              <li className="flex items-center">
-                <i className="fas fa-phone-alt mr-3 text-blue-400"></i>
-                <span>+229 94 15 25 33</span>
+
+              {/* Bloc numéros empilés */}
+              <li className="flex items-start">
+                <i className="fas fa-phone-alt mr-3 text-blue-400 mt-1"></i>
+                <div className="flex flex-col">
+                  <span>+229 01 94 15 25 33</span>
+                  <span>+229 01 97 27 73 72</span>
+                </div>
               </li>
-              <li className="flex items-center">
-                <i className="fas fa-envelope mr-3 text-blue-400"></i>
-                <span>assoscaritativerivedroite@gmail.com</span>
+
+              <li className="flex items-start">
+                <i className="fas fa-envelope mr-3 text-blue-400 mt-1"></i>
+                <span className="break-words">associationrivedroitebenin@gmail.com</span>
               </li>
             </ul>
+
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-300 hover:text-white transition">
                 <i className="fab fa-facebook-f"></i>
