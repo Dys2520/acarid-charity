@@ -86,8 +86,14 @@ export default function Footer() {
               <li className="flex items-start">
                 <i className="fas fa-phone-alt mr-3 text-blue-400 mt-1"></i>
                 <div className="flex flex-col">
+                  <span>+229 01 61 71 73 59</span>
+                </div>
+              </li>
+
+              <li className="flex items-start">
+                <i className="fab fa-whatsapp mr-3 text-green-500 mt-1"></i>
+                <div className="flex flex-col">
                   <span>+229 01 94 15 25 33</span>
-                  <span>+229 01 97 27 73 72</span>
                 </div>
               </li>
 
