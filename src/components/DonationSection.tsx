@@ -44,18 +44,10 @@ export default function DonationSection() {
                 
                 <div className="bg-white p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
                   <div className="flex items-center mb-2">
-                    <Image  src="/moov-logo.png" alt="Moov Money" width={48}  height={32} className="w-12 h-8 mr-3 object-contain" />
-                    <h4 className="font-bold text-gray-800">Moov Money</h4>
-                  </div>
-                  <p className="text-lg font-mono text-gray-700 bg-orange-50 px-3 py-2 rounded">+229  01 94 15 25 33</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg border-l-4 border-yellow-500 shadow-sm">
-                  <div className="flex items-center mb-2">           
                     <Image  src="/mtn-logo.png" alt="MTN Mobile Money" width={48}  height={32} className="w-12 h-8 mr-3 object-contain" />
-                    <h4 className="font-bold text-gray-800">MTN Mobile Money</h4>
+                    <h4 className="font-bold text-gray-800">Momo Pay</h4>
                   </div>
-                  <p className="text-lg font-mono text-gray-700 bg-yellow-50 px-3 py-2 rounded">+229 01 56 97 50 15</p>
+                  <p className="text-lg font-mono text-gray-700 bg-orange-50 px-3 py-2 rounded">*880*41*327744*montant#</p>
                 </div>
               </div>
               
@@ -78,8 +70,8 @@ export default function DonationSection() {
                   ❤️ Merci pour votre générosité ! Chaque don compte pour nos actions.
                 </p>
                 <p className="text-xs text-gray-500 mt-2">
-                  Pour toute question, contactez-nous à <strong>assoscaritativerivedroite@gmail.com</strong>
-                  Pour toute question, contactez-nous à <strong>contact@acarid.org</strong>
+                  Pour toute question, contactez-nous à <strong>associationrivedroitebenin@gmail.com</strong>
+                  Pour toute question, contactez-nous à <strong>+229 01 97 27 73 72</strong>
                 </p>
               </div>
             </div>
