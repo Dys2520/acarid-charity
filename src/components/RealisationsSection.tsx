@@ -23,35 +23,35 @@ const realisations: Realisation[] = [
     title: "Remerciements pour les dons de kits et fournitures scolaires ",
     description: "un sincère remerciement pour les dons de kits et fournitures scolaires apporté comme soutiens au enfants pour la rentré scolaire 2025-2026.",
     period: "2025-2026",
-    image: "/action11.jpg"
+    image: "/action11.jpeg"
   },
 
 {
     title: "Distribution de fournitures scolaires ",
     description: "Editions 2025.",
     period: "2025-2026",
-    image: "/action12.jpg"
+    image: "/action12.jpeg"
   },
 
 {
     title: "Distribution de fournitures scolaires ",
     description: "Editions 2025.",
     period: "2025-2026",
-    image: "/action13.jpg"
+    image: "/action13.jpeg"
   },
 
 {
     title: "Distribution de fournitures scolaires ",
     description: "Editions 2025.",
     period: "2025-2026",
-    image: "/action14.jpg"
+    image: "/action14.jpeg"
   },
 
 {
     title: "Distribution de fournitures scolaires ",
     description: "Editions 2025 .",
     period: "2025-2026",
-    image: "/action15.jpg"
+    image: "/action15.jpeg"
   },
 
 
@@ -254,7 +254,7 @@ export default function RealisationsSection() {
                         <div className="mb-4">
                          <span 
                             className={`inline-block px-3 py-1 text-white text-sm font-medium rounded-full backdrop-blur-sm 
-                              ${realisation.image === "/action11.jpg" ? "bg-red-500" : "bg-blue-500/80"}`}
+                              ${realisation.image === "/action11.jpeg" ? "bg-red-500" : "bg-blue-500/80"}`}
                           >
                             {realisation.period}
                           </span>
