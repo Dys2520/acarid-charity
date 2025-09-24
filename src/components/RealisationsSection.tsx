@@ -20,6 +20,42 @@ const realisations: Realisation[] = [
   },
 
   {
+    title: "Remerciements pour les dons de kits et fournitures scolaires ",
+    description: "un sincère remerciement pour les dons de kits et fournitures scolaires apporté comme soutiens au enfants pour la rentré scolaire 2025-2026.",
+    period: "2025-2026",
+    image: "/action11.jpg"
+  },
+
+{
+    title: "Distribution de fournitures scolaires ",
+    description: "Editions 2025.",
+    period: "2025-2026",
+    image: "/action12.jpg"
+  },
+
+{
+    title: "Distribution de fournitures scolaires ",
+    description: "Editions 2025.",
+    period: "2025-2026",
+    image: "/action13.jpg"
+  },
+
+{
+    title: "Distribution de fournitures scolaires ",
+    description: "Editions 2025.",
+    period: "2025-2026",
+    image: "/action14.jpg"
+  },
+
+{
+    title: "Distribution de fournitures scolaires ",
+    description: "Editions 2025 .",
+    period: "2025-2026",
+    image: "/action15.jpg"
+  },
+
+
+  {
     title: "Distribution de fournitures scolaires",
     description: "Première édition de l'activité de distribution de fournitures scolaires et paiement des frais de scolarité aux enfants bénéficiaires.",
     period: "2022 – 2023",
@@ -30,12 +66,6 @@ const realisations: Realisation[] = [
     description: "Première édition de l'activité de distributions de vivres et de vêtements au sein des orphelinats Les Saints Innocents et La Paix de Natitingou.",
     period: "2022 – 2023",
     image: "/action2.jpg"
-  },
-   {
-    title: "Collecte de kits et fournitures scolaires ",
-    description: "Collecte de kits et fournitures scolaires pour apporté un soutiens au enfants pour la rentré scolaire 2025-2026.",
-    period: "30 Juillet 2025 - 31 Août 2025",
-    image: "/action0.jpg"
   },
   {
     title: "Sortie touristique",
@@ -50,12 +80,6 @@ const realisations: Realisation[] = [
     image: "/action4.jpg"
   },
   {
-    title: "Collecte de kits et fournitures scolaires ",
-    description: "Collecte de kits et fournitures scolaires pour apporté un soutiens au enfants pour la rentré scolaire 2025-2026.",
-    period: "30 Juillet 2025 - 31 Août 2025",
-    image: "/action0.jpg"
-  },
-  {
     title: "Distribution scolaire",
     description: "Deuxième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
     period: "2024",
@@ -66,12 +90,6 @@ const realisations: Realisation[] = [
     description: "Première édition de l'activité La Noel  des enfants.",
     period: "2024",
     image: "/action6.jpg"
-  },
-   {
-    title: "Collecte de kits et fournitures scolaires ",
-    description: "Collecte de kits et fournitures scolaires pour apporté un soutiens au enfants pour la rentré scolaire 2025-2026.",
-    period: "30 Juillet 2025 - 31 Août 2025",
-    image: "/action0.jpg"
   },
   {
     title: "Distribution de vivres",
@@ -84,12 +102,6 @@ const realisations: Realisation[] = [
     description: "Troisième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
     period: "2024-2025",
     image: "/action8.jpg"
-  },
-   {
-    title: "Collecte de kits et fournitures scolaires ",
-    description: "Collecte de kits et fournitures scolaires pour apporté un soutiens au enfants pour la rentré scolaire 2025-2026.",
-    period: "30 Juillet 2025 - 31 Août 2025",
-    image: "/action0.jpg"
   },
   {
     title: "Distribution de vivres",
@@ -242,7 +254,7 @@ export default function RealisationsSection() {
                         <div className="mb-4">
                          <span 
                             className={`inline-block px-3 py-1 text-white text-sm font-medium rounded-full backdrop-blur-sm 
-                              ${realisation.image === "/action0.jpg" ? "bg-red-500" : "bg-blue-500/80"}`}
+                              ${realisation.image === "/action11.jpg" ? "bg-red-500" : "bg-blue-500/80"}`}
                           >
                             {realisation.period}
                           </span>
