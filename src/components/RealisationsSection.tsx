@@ -11,6 +11,13 @@ interface Realisation {
 }
 
 const realisations: Realisation[] = [
+  {
+    title: "Grande collectes",
+    description: "A l'occasion des fêtes de fin d'année contribuez à redonner le sourire à des familles démunies.",
+    period: "15 Octobre 2025 - 15 Décembre 2025",
+    image: "/action16.jpg"
+  },
+
 
   {
     title: "Collecte de kits et fournitures scolaires ",
@@ -33,6 +40,12 @@ const realisations: Realisation[] = [
     image: "/action12.jpeg"
   },
 
+  {
+    title: "Grande collectes",
+    description: "A l'occasion des fêtes de fin d'année contribuez à redonner le sourire à des familles démunies.",
+    period: "15 Octobre 2025 - 15 Décembre 2025",
+    image: "/action16.jpg"
+  },
 {
     title: "Distribution de fournitures scolaires ",
     description: "Editions 2025.",
@@ -54,12 +67,12 @@ const realisations: Realisation[] = [
     image: "/action15.jpeg"
   },
 
-
+  
   {
-    title: "Distribution de fournitures scolaires",
-    description: "Première édition de l'activité de distribution de fournitures scolaires et paiement des frais de scolarité aux enfants bénéficiaires.",
-    period: "2022 – 2023",
-    image: "/action1.jpg"
+    title: "Grande collectes",
+    description: "A l'occasion des fêtes de fin d'année contribuez à redonner le sourire à des familles démunies.",
+    period: "15 Octobre 2025 - 15 Décembre 2025",
+    image: "/action16.jpg"
   },
   {
     title: "Distribution de vivres et vêtements",
@@ -84,6 +97,12 @@ const realisations: Realisation[] = [
     description: "Deuxième édition de l'activité de distribution de fournitures scolaires aux enfants bénéficiaires.",
     period: "2024",
     image: "/action5.jpg"
+  },
+  {
+    title: "Grande collectes",
+    description: "A l'occasion des fêtes de fin d'année contribuez à redonner le sourire à des familles démunies.",
+    period: "15 Octobre 2025 - 15 Décembre 2025",
+    image: "/action16.jpg"
   },
   {
     title: "Noel des enfants",
@@ -254,7 +273,7 @@ export default function RealisationsSection() {
                         <div className="mb-4">
                          <span 
                             className={`inline-block px-3 py-1 text-white text-sm font-medium rounded-full backdrop-blur-sm 
-                              ${realisation.image === "/action11.jpeg" ? "bg-red-500" : "bg-blue-500/80"}`}
+                              ${realisation.image === "/action16.jpeg" ? "bg-red-800" : "bg-blue-500/80"}`}
                           >
                             {realisation.period}
                           </span>

@@ -29,6 +29,17 @@ export default function DonationSection() {
                 </div>
               </div>
             </div>
+
+            {/* Div avec l'image */}
+            <div className="md:w-1/2 relative h-64 md:h-auto">
+              <Image
+                src="/action16.jpg"
+                alt="Grande collecte du 15/10/2025 au 15/12/2025"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
             
             <div className="md:w-1/2 p-8 md:p-12">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Envoyez vos dons par mobile money</h3>
